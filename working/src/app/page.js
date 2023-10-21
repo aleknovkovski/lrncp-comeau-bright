@@ -1,112 +1,72 @@
 import React from 'react';
-import { Code } from 'bright';
+import {Code} from 'bright';
+import Reveal from '../../components/Reveal'
 
 function Home() {
-  const [
-    isFirstSnippetShown,
-    setIsFirstSnippetShown,
-  ] = React.useState(false);
-  const [
-    isSecondSnippetShown,
-    setIsSecondSnippetShown,
-  ] = React.useState(false);
-  const [
-    isThirdSnippetShown,
-    setIsThirdSnippetShown,
-  ] = React.useState(false);
+    
+    return (
+        <main>
+            <h1>Introduction to Python</h1>
+            <h2>Variables and Basic Data Types</h2>
+            <p>
+                Python is a high-level, interpreted
+                programming language. In Python, you don't
+                need to specify the data type of a
+                variable when you declare it. Python
+                automatically determines the data type
+                based on the value you assign.
+            </p>
 
-  return (
-    <main>
-      <h1>Introduction to Python</h1>
-      <h2>Variables and Basic Data Types</h2>
-      <p>
-        Python is a high-level, interpreted
-        programming language. In Python, you don't
-        need to specify the data type of a
-        variable when you declare it. Python
-        automatically determines the data type
-        based on the value you assign.
-      </p>
+            <Reveal>
+                <Code
+                    className="code-snippet"
+                    theme="dracula"
+                    lang="py"
+                >
+                    {FIRST_SNIPPET}
+                </Code>
+            </Reveal>
 
-      {isFirstSnippetShown ? (
-        <Code
-          className="code-snippet"
-          theme="dracula"
-          lang="py"
-        >
-          {FIRST_SNIPPET}
-        </Code>
-      ) : (
-        <div className="reveal">
-          <button
-            onClick={() =>
-              setIsFirstSnippetShown(true)
-            }
-          >
-            Reveal Content
-          </button>
-        </div>
-      )}
 
-      <h2>
-        Control Flow: Conditionals and Loops
-      </h2>
-      <p>
-        Python has standard control flow
-        structures like if statements, for and
-        while loops.
-      </p>
+            <h2>
+                Control Flow: Conditionals and Loops
+            </h2>
+            <p>
+                Python has standard control flow
+                structures like if statements, for and
+                while loops.
+            </p>
 
-      {isSecondSnippetShown ? (
-        <Code
-          className="code-snippet"
-          theme="dracula"
-          lang="py"
-        >
-          {SECOND_SNIPPET}
-        </Code>
-      ) : (
-        <div className="reveal">
-          <button
-            onClick={() =>
-              setIsSecondSnippetShown(true)
-            }
-          >
-            Reveal Content
-          </button>
-        </div>
-      )}
+            <Reveal>
+                <Code
+                    className="code-snippet"
+                    theme="dracula"
+                    lang="py"
+                >
+                    {SECOND_SNIPPET}
+                </Code>
+            </Reveal>
 
-      <h2>Functions and Basic Data Structures</h2>
+            <h2>Functions and Basic Data Structures</h2>
 
-      <p>
-        In Python, you can define your own
-        functions using the def keyword. Python
-        also has built-in data structures like
-        lists and dictionaries.
-      </p>
+            <p>
+                In Python, you can define your own
+                functions using the def keyword. Python
+                also has built-in data structures like
+                lists and dictionaries.
+            </p>
 
-      {isThirdSnippetShown ? (
-        <Code
-          className="code-snippet"
-          theme="dracula"
-          lang="py"
-        >
-          {THIRD_SNIPPET}
-        </Code>
-      ) : (
-        <div className="reveal">
-          <button
-            onClick={() =>
-              setIsThirdSnippetShown(true)
-            }
-          >
-            Reveal Content
-          </button>
-        </div>
-      )}
-    </main>
-  );
+            <Reveal>
+                <Code
+                    className="code-snippet"
+                    theme="dracula"
+                    lang="py"
+                >
+                    {THIRD_SNIPPET}
+                </Code>
+            </Reveal>
+        </main>
+    );
 }
 
 const FIRST_SNIPPET = `\
